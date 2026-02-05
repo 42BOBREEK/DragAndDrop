@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObjectsSpawner : MonoBehaviour
 {
-    [SerializeField] private DragableObject[] _objectsToSpawn;
+    [SerializeField] private Fruit[] _fruitsToSpawn;
     [SerializeField] private Transform _positionToSpawnAt;
     [SerializeField] private DragAndDrop _dragNDrop;
     [SerializeField] private int _firstObjRandomChance;
@@ -13,18 +13,18 @@ public class ObjectsSpawner : MonoBehaviour
 
     public event Action<DragableObject> ObjectSpawned;
 
-    public DragableObject Spawn()
+    public DragableObject SpawnRandomObject()
     {
         DragableObject newObject = Instantiate(GetRandomObjectToSpawn(), _positionToSpawnAt.position, Quaternion.identity);
 
         return newObject;
     }
 
-    public DragableObject SpawnMergedFruit(Vector2 posToSpawnAt, FruitType fruitType)
+    public Fruit SpawnMergedFruit(Vector2 posToSpawnAt, FruitType fruitType)
     {
-        DragableObject fruitToSpawn = null;
+        Fruit fruitToSpawn = null;
 
-        foreach(var obj in _objectsToSpawn)
+        foreach(var obj in _fruitsToSpawn)
         {
             if(obj.GetFruitType() == fruitType)
                 fruitToSpawn = obj;
@@ -33,7 +33,7 @@ public class ObjectsSpawner : MonoBehaviour
         if(fruitToSpawn == null)
             return null;
 
-        DragableObject newObject = Instantiate(fruitToSpawn, posToSpawnAt, Quaternion.identity);
+        Fruit newObject = Instantiate(fruitToSpawn, posToSpawnAt, Quaternion.identity);
         ObjectSpawned?.Invoke(newObject);
 
         return newObject;
@@ -56,6 +56,6 @@ public class ObjectsSpawner : MonoBehaviour
             objectIndex = 4; // 97 - 100
 
 
-        return _objectsToSpawn[objectIndex];
+        return _fruitsToSpawn[objectIndex];
     }
 }

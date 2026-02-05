@@ -59,7 +59,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnPressPerformed(InputAction.CallbackContext context)
     {
-        if (positionAction == null || _basketArea == null || _mainCamera == null)
+        if (positionAction == null || _basketArea == null || _mainCamera == null || _canDrag == false)
             return;
 
         Vector2 screenPos = positionAction.action.ReadValue<Vector2>();

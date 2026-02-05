@@ -5,7 +5,9 @@ public class ObjectsMerger : MonoBehaviour
 {
     [SerializeField] private ObjectsSpawner _spawner;
 
-    public void MergeObjects(DragableObject obj1,DragableObject obj2)
+    public event Action<int> BountyMerged;
+
+    public void MergeObjects(Fruit obj1,Fruit obj2)
     {
         if(obj1.GetFruitType() != obj2.GetFruitType())
             return;
@@ -14,6 +16,9 @@ public class ObjectsMerger : MonoBehaviour
 
         obj1.ChangeIsMerged(true);
         obj2.ChangeIsMerged(true);
+
+        if(obj1.TryGetComponent<BountyFruit>(out BountyFruit bounty))
+            BountyMerged?.Invoke(bounty.GetBounty());
 
         Vector2 middlePoint = 
             (obj1.transform.position + obj2.transform.position) / 2f;

@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 8534182711350524524}
   - component: {fileID: 3314403259531393661}
   - component: {fileID: 1384476895209009349}
+  - component: {fileID: 4785503065012412757}
+  - component: {fileID: 1120286545965426704}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -189,8 +191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cae55626a908742d8758d62d2b33253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragableObject
-  _isMerged: 0
-  _type: 1
   _gravityField: {fileID: 8567764156355561841}
   _wallsTag: Walls
 --- !u!58 &8534182711350524524
@@ -269,3 +269,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attractor
   _attractionForce: 75
+--- !u!114 &4785503065012412757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395397623317256412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e0c9901187bd162b2e05032f3c0990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BountyFruit
+  _bountyForMerge: 10
+--- !u!114 &1120286545965426704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395397623317256412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612d6e0c7f073f96e917afce3effc948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fruit
+  _gravityField: {fileID: 8567764156355561841}
+  _wallsTag: Walls
+  _isMerged: 0
+  _type: 1

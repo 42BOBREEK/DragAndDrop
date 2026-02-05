@@ -6,18 +6,15 @@ using System;
 [RequireComponent(typeof(Attractor))]
 public class DragableObject : MonoBehaviour, IDragable
 {
-    [SerializeField] private bool _isMerged;
-    [SerializeField] private FruitType _type;
     [SerializeField] private GravityField _gravityField;
     [SerializeField] private string _wallsTag;
 
     private Rigidbody2D _rigidbody;
     private Attractor _attractor;
+    private bool _canCollideWithDragableObjects;
 
     public event Action<DragableObject> Collided;
     public event Action<DragableObject, DragableObject> CollidedWithDragableObject;
-
-    public FruitType Type => _type;
 
     private void Awake()
     {
@@ -29,19 +26,18 @@ public class DragableObject : MonoBehaviour, IDragable
     private void OnEnable()
     {
         _gravityField.Triggered += AttractToObject;
+        ChangeCanCollideWithDragableObjects(true);
     }
      
     private void OnDisable()
     {
         _gravityField.Triggered -= AttractToObject;
+        ChangeCanCollideWithDragableObjects(false);
     }
      
     private void AttractToObject(DragableObject objectAttractTo)
     {
-        if(GetFruitType() != objectAttractTo.GetFruitType())
-            return;
-
-        _attractor.AttractToObject(objectAttractTo.transform);
+        _attractor.AttractToObject(objectAttractTo);
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
@@ -51,16 +47,17 @@ public class DragableObject : MonoBehaviour, IDragable
 
         Collided?.Invoke(this);
 
-        if(_isMerged)
+        if(_canCollideWithDragableObjects == false)
             return;
 
-        if(coll.gameObject.TryGetComponent<DragableObject>(out DragableObject obj) == true)
+        if(coll.gameObject.TryGetComponent<Fruit>(out Fruit obj) == true)
+        {
             CollidedWithDragableObject?.Invoke(this, obj);
+        }
     }
 
-    public void ChangeIsMerged(bool isMerged) => _isMerged = isMerged;
-
-    public FruitType GetFruitType() => _type;
+    public void ChangeCanCollideWithDragableObjects(bool canCollide) => 
+        _canCollideWithDragableObjects = canCollide;
 
     public void OnStartDrag()
     {
@@ -71,13 +68,4 @@ public class DragableObject : MonoBehaviour, IDragable
     {
         _rigidbody.gravityScale = 1f;
     }
-}
-
-public enum FruitType
-{
-    Apple = 0,
-    Banana = 1,
-    Orange = 2,
-    Apricot = 3,
-    Kiwi = 4
 }
