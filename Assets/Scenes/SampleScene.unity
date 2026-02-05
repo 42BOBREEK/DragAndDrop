@@ -1758,6 +1758,7 @@ GameObject:
   - component: {fileID: 718023917}
   - component: {fileID: 718023916}
   - component: {fileID: 718023915}
+  - component: {fileID: 718023918}
   m_Layer: 5
   m_Name: CopyButton
   m_TagString: Untagged
@@ -1828,7 +1829,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 718023916}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 718023918}
+        m_TargetAssemblyTypeName: CopyPaster, Assembly-CSharp
+        m_MethodName: SpawnCopyPastObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &718023916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1867,6 +1880,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718023913}
   m_CullTransparentMesh: 1
+--- !u!114 &718023918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718023913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 396f8259155605a21a8df0c10e6c81e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CopyPaster
+  _copyPastObject: {fileID: 6139419997206395410, guid: dbb9e42a3e82759f69e63d5d76f3aa02, type: 3}
+  _spawner: {fileID: 231524694}
+  _dragNDrop: {fileID: 2042810141}
+  _manager: {fileID: 979597026}
 --- !u!1 &790474155
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,6 +2233,7 @@ MonoBehaviour:
   _isPlaying: 1
   _merger: {fileID: 979597028}
   _scoreCounter: {fileID: 1857352259}
+  _isPaused: 0
 --- !u!4 &979597027
 Transform:
   m_ObjectHideFlags: 0
@@ -3725,6 +3755,8 @@ MonoBehaviour:
   _basketArea: {fileID: 2042810143}
   _moveSpeed: 20
   _gravityScale: 2
+  _activeRb: {fileID: 0}
+  _canDrag: 1
 --- !u!4 &2042810142
 Transform:
   m_ObjectHideFlags: 0

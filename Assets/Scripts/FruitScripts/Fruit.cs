@@ -5,7 +5,12 @@ public class Fruit : DragableObject
 {
     [SerializeField] private FruitType _type;
 
-    public virtual FruitType GetFruitType() => _type;
+    public FruitType GetFruitType() => _type;
+
+    protected void ChangeFruitType(FruitType typeToSet)
+    {
+        _type = typeToSet;
+    }
 }
 
 public enum FruitType

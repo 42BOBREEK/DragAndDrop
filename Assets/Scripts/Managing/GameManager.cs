@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ObjectsMerger _merger;
     [SerializeField] private ScoreCounter _scoreCounter;
 
-    private bool _isPaused;
+    [SerializeField] private bool _isPaused;
 
     private void Start()
     {
@@ -18,13 +18,13 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _spawner.ObjectSpawned += SubscribeToObject;
+        _spawner.ObjectSpawned += SubscribeToCollidedWithDragableObject;
         _merger.BountyMerged += ChangeScore;
     }
 
     private void OnDisable()
     {
-        _spawner.ObjectSpawned -= SubscribeToObject;
+        _spawner.ObjectSpawned -= SubscribeToCollidedWithDragableObject;
         _merger.BountyMerged -= ChangeScore;
     }
 
@@ -44,14 +44,13 @@ public class GameManager : MonoBehaviour
                 _dragNDrop.SetActiveObject(newObject.gameObject.GetComponent<Rigidbody2D>());
 
                 newObject.Collided += SetActiveObjectNull;
-                SubscribeToObject(newObject);
+                SubscribeToCollidedWithDragableObject(newObject);
             }
             else
                 yield return null;
         }
     }
 
-    
     private void SetActiveObjectNull(DragableObject newObject) 
     {
         _dragNDrop.SetActiveObjectNull();
@@ -72,9 +71,14 @@ public class GameManager : MonoBehaviour
             _merger.MergeObjects(fruit1, fruit2);
     }
 
-    private void SubscribeToObject(DragableObject obj)
+    public void SubscribeToCollidedWithDragableObject(DragableObject obj)
     {
         obj.CollidedWithDragableObject += MergeObjects;
+    }
+
+    public void SubscribeToCollided(DragableObject obj)
+    {
+        obj.Collided += SetActiveObjectNull;
     }
 
     private void ChangeScore(int score)

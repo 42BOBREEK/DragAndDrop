@@ -20,6 +20,13 @@ public class ObjectsSpawner : MonoBehaviour
         return newObject;
     }
 
+    public Fruit SpawnFruit(Fruit fruitToSpawn)
+    {
+        Fruit fruit = Instantiate(fruitToSpawn, _positionToSpawnAt.position, Quaternion.identity);
+
+        return fruit;
+    }
+
     public Fruit SpawnMergedFruit(Vector2 posToSpawnAt, FruitType fruitType)
     {
         Fruit fruitToSpawn = null;

@@ -1,4 +1,6 @@
+using UnityEngine.EventSystems;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,12 +18,12 @@ public class DragAndDrop : MonoBehaviour
     private Camera _mainCamera;
     private WaitForFixedUpdate _waitForFixedUpdate = new();
 
-    private Rigidbody2D _activeRb;
+    [SerializeField] private Rigidbody2D _activeRb;
 
     private float _fixedY;
     private float _minX;
     private float _maxX;
-    private bool _canDrag = true;
+    [SerializeField] private bool _canDrag = true;
 
     public bool HasActiveObject => _activeRb != null;
 
@@ -63,12 +65,33 @@ public class DragAndDrop : MonoBehaviour
             return;
 
         Vector2 screenPos = positionAction.action.ReadValue<Vector2>();
+
+        if (IsPointerOverUI(screenPos))
+            return;
+
         Vector2 worldPos = _mainCamera.ScreenToWorldPoint(screenPos);
 
         if (!_basketArea.OverlapPoint(worldPos))
             return;
 
         StartCoroutine(MoveUpdate());
+    }
+
+    private bool IsPointerOverUI(Vector2 screenPosition)
+    {
+        if (EventSystem.current == null)
+            return false;
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            position = screenPosition
+        };
+
+        List<RaycastResult> results = new List<RaycastResult>();
+
+        EventSystem.current.RaycastAll(eventData, results);
+
+        return results.Count > 0;
     }
 
     private IEnumerator MoveUpdate()
@@ -106,4 +129,6 @@ public class DragAndDrop : MonoBehaviour
     public void SetActiveObject(Rigidbody2D rb) => _activeRb = rb;
 
     public void SetActiveObjectNull() => _activeRb = null;
+
+    public void DeleteActiveObject() => Destroy(_activeRb.gameObject);
 }

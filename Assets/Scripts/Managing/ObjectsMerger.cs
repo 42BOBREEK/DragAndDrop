@@ -14,8 +14,11 @@ public class ObjectsMerger : MonoBehaviour
 
         FruitType commonFruitType = obj1.GetFruitType();
 
-        obj1.ChangeIsMerged(true);
-        obj2.ChangeIsMerged(true);
+        DragableObject object1 = obj1;
+        DragableObject object2 = obj2;
+
+        object1.ChangeCanCollideWithDragableObjects(false);
+        object2.ChangeCanCollideWithDragableObjects(false);
 
         if(obj1.TryGetComponent<BountyFruit>(out BountyFruit bounty))
             BountyMerged?.Invoke(bounty.GetBounty());
