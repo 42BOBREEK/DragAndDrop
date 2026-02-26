@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1384476895209009349}
   - component: {fileID: 4575869364300469983}
   - component: {fileID: 1120286545965426704}
+  - component: {fileID: -1053793061242792008}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Untagged
@@ -226,7 +227,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -281,5 +282,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   _gravityField: {fileID: 8567764156355561841}
   _wallsTag: Walls
-  _isMerged: 0
   _type: 2
+--- !u!114 &-1053793061242792008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395397623317256412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7090d39d632f14cea488d252de845cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObject
+  _angleToMove: {x: 0, y: 0, z: -360}
+  _isRotatable: 1
+  _rotatingDuration: 10

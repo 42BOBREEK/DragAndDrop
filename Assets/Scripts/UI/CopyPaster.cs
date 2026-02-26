@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class CopyPaster : MonoBehaviour
 {
@@ -6,9 +7,24 @@ public class CopyPaster : MonoBehaviour
     [SerializeField] private ObjectsSpawner _spawner;
     [SerializeField] private DragAndDrop _dragNDrop;
     [SerializeField] private GameManager _manager;
+    [SerializeField] private int _chargesLeft;
+    [SerializeField] private TextMeshProUGUI _chargesLeftText;
+
+    private void Start()
+    {
+        UpdateChargesText();
+    }
+
+    private void UpdateChargesText()
+    {
+        _chargesLeftText.text = _chargesLeft.ToString();
+    }
 
     public void SpawnCopyPastObject()
     {
+        if(_dragNDrop.CanDrag == false || _chargesLeft <= 0)
+            return;
+
         Fruit copyPastObject = _spawner.SpawnFruit(_copyPastObject);
         copyPastObject.OnStartDrag();
 
@@ -18,5 +34,13 @@ public class CopyPaster : MonoBehaviour
 
         _dragNDrop.DeleteActiveObject();
         _dragNDrop.SetActiveObject(copyPastRigidbody);
+        _chargesLeft--;
+        UpdateChargesText();
+    }
+
+    public void AddCharges(int chargesToPlus) 
+    {
+        _chargesLeft += chargesToPlus;
+        UpdateChargesText();
     }
 }

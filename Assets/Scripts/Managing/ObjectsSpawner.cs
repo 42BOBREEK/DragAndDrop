@@ -10,8 +10,9 @@ public class ObjectsSpawner : MonoBehaviour
     [SerializeField] private int _secondObjRandomChance;
     [SerializeField] private int _thirdObjRandomChance;
     [SerializeField] private int _fourthObjRandomChance;
+    [SerializeField] private TreasureChest _chestToSpawn;
 
-    public event Action<DragableObject> ObjectSpawned;
+    public event Action<DragableObject> MergedObjectSpawned;
 
     public DragableObject SpawnRandomObject()
     {
@@ -20,7 +21,7 @@ public class ObjectsSpawner : MonoBehaviour
         return newObject;
     }
 
-    public Fruit SpawnFruit(Fruit fruitToSpawn)
+    public Fruit SpawnFruit(Fruit fruitToSpawn) //для copypast object'a
     {
         Fruit fruit = Instantiate(fruitToSpawn, _positionToSpawnAt.position, Quaternion.identity);
 
@@ -41,9 +42,16 @@ public class ObjectsSpawner : MonoBehaviour
             return null;
 
         Fruit newObject = Instantiate(fruitToSpawn, posToSpawnAt, Quaternion.identity);
-        ObjectSpawned?.Invoke(newObject);
+        newObject.InitializeCollidableObject(); 
+        MergedObjectSpawned?.Invoke(newObject);
+        newObject.RotatingObject.StopRotation();
 
         return newObject;
+    }
+
+    public TreasureChest SpawnChest(Vector2 posToSpawnAt)
+    {
+        return Instantiate(_chestToSpawn, posToSpawnAt, Quaternion.identity);
     }
 
     private DragableObject GetRandomObjectToSpawn()

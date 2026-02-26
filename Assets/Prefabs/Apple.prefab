@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1384476895209009349}
   - component: {fileID: 4264627107926599543}
   - component: {fileID: 1120286545965426704}
+  - component: {fileID: -347149152138245981}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -212,7 +213,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15}
   m_Radius: 2.48
 --- !u!50 &3314403259531393661
 Rigidbody2D:
@@ -281,5 +282,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   _gravityField: {fileID: 8567764156355561841}
   _wallsTag: Walls
-  _isMerged: 0
   _type: 0
+--- !u!114 &-347149152138245981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8395397623317256412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7090d39d632f14cea488d252de845cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingObject
+  _angleToMove: {x: 0, y: 0, z: -360}
+  _isRotatable: 1
+  _rotatingDuration: 10

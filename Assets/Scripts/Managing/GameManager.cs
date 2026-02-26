@@ -8,27 +8,36 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _isPlaying = true;
     [SerializeField] private ObjectsMerger _merger;
     [SerializeField] private ScoreCounter _scoreCounter;
-
+    [SerializeField] private DeadLine _deadLine;
+    [SerializeField] private RectTransform _gameOverPanel;
     [SerializeField] private bool _isPaused;
+    [SerializeField] private AudioSource _audio;
 
     private void Start()
     {
+        Time.timeScale = 1f;
         StartCoroutine(SpawnObjectIfNeeded());
     }
 
     private void OnEnable()
     {
-        _spawner.ObjectSpawned += SubscribeToCollidedWithDragableObject;
+        _spawner.MergedObjectSpawned += SubscribeToCollidedWithDragableObject;
+        _spawner.MergedObjectSpawned += PlaySound;
         _merger.BountyMerged += ChangeScore;
+        _merger.WatermelonMerged += OnWatermelonMerged;
+        _deadLine.CollidedWithFruit += SetGameOver;
     }
 
     private void OnDisable()
     {
-        _spawner.ObjectSpawned -= SubscribeToCollidedWithDragableObject;
+        _spawner.MergedObjectSpawned -= SubscribeToCollidedWithDragableObject;
+        _spawner.MergedObjectSpawned -= PlaySound;
         _merger.BountyMerged -= ChangeScore;
+        _merger.WatermelonMerged -= OnWatermelonMerged;
+        _deadLine.CollidedWithFruit -= SetGameOver;
     }
 
-    private IEnumerator SpawnObjectIfNeeded()
+    private IEnumerator SpawnObjectIfNeeded() 
     {
         while(_isPlaying)
         {
@@ -71,7 +80,36 @@ public class GameManager : MonoBehaviour
             _merger.MergeObjects(fruit1, fruit2);
     }
 
-    public void SubscribeToCollidedWithDragableObject(DragableObject obj)
+    private void SetGameOver()
+    {
+        SetIsPaused(true);
+        _dragNDrop.SetCanDrag(false);
+        _gameOverPanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void OnWatermelonMerged(Vector2 watermelonPos)
+    {
+        _spawner.SpawnChest(watermelonPos);
+        _scoreCounter.AddWatermelonScore();
+    }
+
+    private void PlaySound(DragableObject obj)
+    {
+        _audio.Play();
+    }
+
+    private void ChangeScore(int score)
+    {
+        _scoreCounter.AddScore(score);
+    }
+
+    public void SetIsPaused(bool isPaused)
+    {
+        _isPaused = isPaused;
+    }
+
+    private void SubscribeToCollidedWithDragableObject(DragableObject obj)
     {
         obj.CollidedWithDragableObject += MergeObjects;
     }
@@ -79,15 +117,5 @@ public class GameManager : MonoBehaviour
     public void SubscribeToCollided(DragableObject obj)
     {
         obj.Collided += SetActiveObjectNull;
-    }
-
-    private void ChangeScore(int score)
-    {
-        _scoreCounter.ChangeScore(score);
-    }
-
-    public void SetIsPaused(bool isPaused)
-    {
-        _isPaused = isPaused;
     }
 }
