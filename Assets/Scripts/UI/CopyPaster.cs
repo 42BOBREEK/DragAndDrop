@@ -1,23 +1,17 @@
 using UnityEngine;
 using TMPro;
+using System;
 
-public class CopyPaster : MonoBehaviour
+public class CopyPaster : ActionButton
 {
     [SerializeField] private Fruit _copyPastObject;
     [SerializeField] private ObjectsSpawner _spawner;
     [SerializeField] private DragAndDrop _dragNDrop;
     [SerializeField] private GameManager _manager;
-    [SerializeField] private int _chargesLeft;
-    [SerializeField] private TextMeshProUGUI _chargesLeftText;
 
     private void Start()
     {
         UpdateChargesText();
-    }
-
-    private void UpdateChargesText()
-    {
-        _chargesLeftText.text = _chargesLeft.ToString();
     }
 
     public void SpawnCopyPastObject()
@@ -35,12 +29,7 @@ public class CopyPaster : MonoBehaviour
         _dragNDrop.DeleteActiveObject();
         _dragNDrop.SetActiveObject(copyPastRigidbody);
         _chargesLeft--;
-        UpdateChargesText();
-    }
-
-    public void AddCharges(int chargesToPlus) 
-    {
-        _chargesLeft += chargesToPlus;
+        InvokeChargesChanged();
         UpdateChargesText();
     }
 }

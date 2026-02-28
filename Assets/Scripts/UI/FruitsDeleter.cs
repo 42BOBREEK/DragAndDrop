@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using System;
 
-public class FruitsDeleter : MonoBehaviour
+public class FruitsDeleter : ActionButton
 {
     [SerializeField] private InputReader _input;
     [SerializeField] private DragAndDrop _dragNDrop;
@@ -11,9 +11,6 @@ public class FruitsDeleter : MonoBehaviour
     [SerializeField] private float _canDragDelay;
     [SerializeField] private DeleterAnimation _animation;
         
-    [SerializeField] private int _chargesLeft;
-    [SerializeField] private TextMeshProUGUI _chargesLeftText;
-
     public event Action<Fruit> FruitDeleted;
 
     private void OnEnable()
@@ -50,6 +47,7 @@ public class FruitsDeleter : MonoBehaviour
     {
         Destroy(fruit.gameObject);
         _chargesLeft--;
+        InvokeChargesChanged();
         UpdateChargesText();
     }
 
@@ -65,20 +63,16 @@ public class FruitsDeleter : MonoBehaviour
         _dragNDrop.SetCanDrag(true);
     }
 
-    private void UpdateChargesText()
+    public void ToggleCanDelete() 
     {
-        _chargesLeftText.text = _chargesLeft.ToString();
-    }
+        if(_chargesLeft <= 0)
+        {
+            _canDelete = false;
+            _dragNDrop.SetCanDrag(true);
+            return;
+        }
 
-    public void AddCharges(int chargesToPlus) 
-    {
-        _chargesLeft += chargesToPlus;
-        UpdateChargesText();
-    }
-
-    public void ChangeCanDelete(bool canDelete) 
-    {
-        _canDelete = canDelete;
-        _dragNDrop.SetCanDrag(!canDelete);
+        _canDelete = !_canDelete;
+        _dragNDrop.SetCanDrag(!_canDelete);
     }
 }

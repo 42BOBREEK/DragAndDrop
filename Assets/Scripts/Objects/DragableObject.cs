@@ -7,7 +7,7 @@ using System;
 [RequireComponent(typeof(RotatingObject))]
 public class DragableObject : MonoBehaviour
 {
-    [SerializeField] private GravityField _gravityField;
+    [SerializeField] private GravityField _gravityField; //TODO: suck my dick
     [SerializeField] private string _wallsTag;
 
     private Rigidbody2D _rigidbody;
