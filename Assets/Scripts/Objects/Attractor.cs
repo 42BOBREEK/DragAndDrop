@@ -1,29 +1,29 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Fruit))]
+[RequireComponent(typeof(MergeableObject))]
 public class Attractor : MonoBehaviour
 {
     [SerializeField] private float _attractionForce;
 
     private Rigidbody2D _rigidbody;
-    private Fruit _fruit;
+    private MergeableObject _mergeableObject;
 
     private WaitForFixedUpdate _wait = new WaitForFixedUpdate();
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _fruit = GetComponent<Fruit>();
+        _mergeableObject = GetComponent<MergeableObject>();
     }
 
     public void AttractToObject(DragableObject objectAttractTo)
     {
-        if(objectAttractTo.TryGetComponent<Fruit>(out Fruit fruitAttractTo))
-            if(IsCommonType(fruitAttractTo) == false)
+        if(objectAttractTo.TryGetComponent<MergeableObject>(out MergeableObject mergeableObjectAttractTo))
+            if(IsCommonType(mergeableObjectAttractTo) == false)
                 return;
 
-        StartCoroutine(AttractToObjectSlowly(fruitAttractTo.transform));
+        StartCoroutine(AttractToObjectSlowly(mergeableObjectAttractTo.transform));
     }
 
     private IEnumerator AttractToObjectSlowly(Transform objectAttractTo)
@@ -35,9 +35,9 @@ public class Attractor : MonoBehaviour
         yield return _wait;
     }
 
-    private bool IsCommonType(Fruit fruitToCheck)
+    private bool IsCommonType(MergeableObject mergeableObjectToCheck)
     {
-        if(fruitToCheck.GetFruitType() == _fruit.GetFruitType())
+        if(mergeableObjectToCheck.GetMergeableObjectLevel() == _mergeableObject.GetMergeableObjectLevel())
             return true;
         else
             return false;

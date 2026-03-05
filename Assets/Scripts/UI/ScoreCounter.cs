@@ -1,19 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class ScoreCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _scoreText;
-    [SerializeField] private TextMeshProUGUI _waterMelonText;
+    [SerializeField] private TextMeshProUGUI _ultimateScoreText;
     [SerializeField] private UnityEngine.UI.Image _sunBurstImage;
 
     private int _score;
-    private int _watermelonScore;
+    private int _ultimateScore;
 
     public int Score => _score;
-    public int WatermelonScore => _watermelonScore;
+    public int UltimateScore => _ultimateScore;
 
     private void UpdateText(TextMeshProUGUI text, int score)
     {
@@ -23,25 +22,25 @@ public class ScoreCounter : MonoBehaviour
     public void LoadProgress(int score, int watermelonScore)
     {
         _score = score;
-        _watermelonScore = watermelonScore;
+        _ultimateScore = watermelonScore;
         UpdateText(_scoreText, _score);
-        UpdateText(_waterMelonText, _watermelonScore);
+        UpdateText(_ultimateScoreText, _ultimateScore);
 
-        if(_watermelonScore > 0)
+        if(_ultimateScore > 0)
         {
             _sunBurstImage.gameObject.SetActive(true);
         }
     }
 
-    public void AddWatermelonScore()
+    public void AddUltimateScore()
     {
-        _watermelonScore++;
+        _ultimateScore++;
 
-        if(_watermelonScore > 0)
+        if(_ultimateScore > 0)
         {
             _sunBurstImage.gameObject.SetActive(true);
         }
-        UpdateText(_waterMelonText, _watermelonScore);
+        UpdateText(_ultimateScoreText, _ultimateScore);
 
     }
 

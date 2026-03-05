@@ -4,13 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class DeadLine : MonoBehaviour
 {
-    public event Action CollidedWithFruit;
+    public event Action CollidedWithMergeableObject;
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        coll.gameObject.TryGetComponent<Fruit>(out Fruit fruit);
+        coll.gameObject.TryGetComponent<MergeableObject>(out MergeableObject obj);
 
-        if(fruit != null && fruit.CanCollideWithDeadLine == true)
-            CollidedWithFruit?.Invoke();
+        if(obj != null && obj.CanCollideWithDeadLine == true)
+            CollidedWithMergeableObject?.Invoke();
     }
 }

@@ -9,17 +9,17 @@ public class EffectsSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        _merger.FruitsMerged += SpawnParticles;
+        _merger.MergeableObjectsMerged += SpawnParticles;
     }
 
     private void OnDisable()
     {
-        _merger.FruitsMerged -= SpawnParticles;
+        _merger.MergeableObjectsMerged -= SpawnParticles;
     }
 
-    private void SpawnParticles(Vector2 posToSpawnAt, FruitType fruitType)
+    private void SpawnParticles(Vector2 posToSpawnAt, MergeableObjectLevel objectType)
     {
-        int particleToSpawnIndex = (int)fruitType;
+        int particleToSpawnIndex = (int)objectType;
 
         if(particleToSpawnIndex >= _particles.Length)
             return;

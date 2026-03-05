@@ -1,0 +1,257 @@
+fileFormatVersion: 2
+guid: f0db0639ee7d90888a23aab670bb1491
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8844675252891835789
+    second: copyPasterIcon_0
+  - first:
+      213: 4424123408123655986
+    second: copyPasterIcon_1
+  - first:
+      213: 4278782125927493397
+    second: copyPasterIcon_2
+  - first:
+      213: 7094088877646853550
+    second: copyPasterIcon_3
+  - first:
+      213: -8169641647885461867
+    second: copyPasterIcon_4
+  - first:
+      213: -138898380306766646
+    second: copyPasterIcon_5
+  - first:
+      213: -8567889501145989735
+    second: copyPasterIcon_6
+  - first:
+      213: 1286927001152488515
+    second: copyPasterIcon_7
+  - first:
+      213: -1147976797859343085
+    second: copyPasterIcon_8
+  - first:
+      213: -8321825400651167116
+    second: copyPasterIcon_9
+  - first:
+      213: 2162825277017709093
+    second: copyPasterIcon_10
+  - first:
+      213: 2792912453625614207
+    second: copyPasterIcon_11
+  - first:
+      213: -2018217298724895610
+    second: copyPasterIcon_12
+  - first:
+      213: -8732847569480798675
+    second: copyPasterIcon_13
+  - first:
+      213: -9062940774561043005
+    second: copyPasterIcon_14
+  - first:
+      213: -7572086251615577981
+    second: copyPasterIcon_15
+  - first:
+      213: -2445747509921626314
+    second: copyPasterIcon_16
+  - first:
+      213: 7583965558723795537
+    second: copyPasterIcon_17
+  - first:
+      213: -5705644853228338306
+    second: copyPasterIcon_18
+  - first:
+      213: 8570131529600807459
+    second: copyPasterIcon_19
+  - first:
+      213: 4490441467858074016
+    second: copyPasterIcon_20
+  - first:
+      213: 8246148175058204917
+    second: copyPasterIcon_21
+  - first:
+      213: 5432249671574699961
+    second: copyPasterIcon_22
+  - first:
+      213: -989166126561964943
+    second: copyPasterIcon_23
+  - first:
+      213: -2323165109694950492
+    second: copyPasterIcon_24
+  - first:
+      213: -359773554795010898
+    second: copyPasterIcon_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: copyPasterIcon_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 584
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3448d830a451cd110800000000000000
+      internalID: 1286927001152488515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 25f7f91564a22bc808f131021a8fea24
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      copyPasterIcon_0: 8844675252891835789
+      copyPasterIcon_1: 4424123408123655986
+      copyPasterIcon_10: 2162825277017709093
+      copyPasterIcon_11: 2792912453625614207
+      copyPasterIcon_12: -2018217298724895610
+      copyPasterIcon_13: -8732847569480798675
+      copyPasterIcon_14: -9062940774561043005
+      copyPasterIcon_15: -7572086251615577981
+      copyPasterIcon_16: -2445747509921626314
+      copyPasterIcon_17: 7583965558723795537
+      copyPasterIcon_18: -5705644853228338306
+      copyPasterIcon_19: 8570131529600807459
+      copyPasterIcon_2: 4278782125927493397
+      copyPasterIcon_20: 4490441467858074016
+      copyPasterIcon_21: 8246148175058204917
+      copyPasterIcon_22: 5432249671574699961
+      copyPasterIcon_23: -989166126561964943
+      copyPasterIcon_24: -2323165109694950492
+      copyPasterIcon_25: -359773554795010898
+      copyPasterIcon_26: 1451498432
+      copyPasterIcon_3: 7094088877646853550
+      copyPasterIcon_4: -8169641647885461867
+      copyPasterIcon_5: -138898380306766646
+      copyPasterIcon_6: -8567889501145989735
+      copyPasterIcon_7: 1286927001152488515
+      copyPasterIcon_8: -1147976797859343085
+      copyPasterIcon_9: -8321825400651167116
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

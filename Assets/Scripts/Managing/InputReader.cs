@@ -55,7 +55,7 @@ public class InputReader : MonoBehaviour
         return results.Count > 0;
     }
 
-    public Fruit GetFruitUnderPointer()
+    public MergeableObject GetMergeableObjectUnderPointer()
     {
         Vector2 worldPos = _mainCamera.ScreenToWorldPoint(PointerScreenPosition);
 
@@ -63,13 +63,13 @@ public class InputReader : MonoBehaviour
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.TryGetComponent<Fruit>(out Fruit fruit))
-                return fruit;
+            if (hit.TryGetComponent<MergeableObject>(out MergeableObject obj))
+                return obj;
 
-            hit.GetComponentInParent<Fruit>();
+            MergeableObject parentObj = hit.GetComponentInParent<MergeableObject>();
 
-            if(hit != null)
-                return null;
+            if(parentObj != null)
+                return parentObj;
         }
 
         return null;

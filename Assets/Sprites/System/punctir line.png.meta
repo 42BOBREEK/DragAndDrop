@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 7d8dae677e32e81fa84d4de5a87bab41
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3310436983286385474
+    second: punctir line_0
+  - first:
+      213: 365796238430929296
+    second: punctir line_1
+  - first:
+      213: -6116773955343333499
+    second: punctir line_2
+  - first:
+      213: -3700251745653309549
+    second: punctir line_3
+  - first:
+      213: -1756967940295845444
+    second: punctir line_4
+  - first:
+      213: -245299633482805124
+    second: punctir line_5
+  - first:
+      213: -3862505536012709486
+    second: punctir line_6
+  - first:
+      213: 8455495133710483610
+    second: punctir line_7
+  - first:
+      213: 2179236646525566074
+    second: punctir line_8
+  - first:
+      213: -4087506653608213004
+    second: punctir line_9
+  - first:
+      213: -7243682977906040249
+    second: punctir line_10
+  - first:
+      213: -5358279437470501861
+    second: punctir line_11
+  - first:
+      213: -1032406153321478029
+    second: punctir line_12
+  - first:
+      213: 6785764241966741756
+    second: punctir line_13
+  - first:
+      213: -4728449598106571726
+    second: punctir line_14
+  - first:
+      213: 2776324241525715195
+    second: punctir line_15
+  - first:
+      213: -8078740504701487533
+    second: punctir line_16
+  - first:
+      213: -3648275564759883237
+    second: punctir line_17
+  - first:
+      213: 5672487597987351135
+    second: punctir line_18
+  - first:
+      213: -144076519830530619
+    second: punctir line_19
+  - first:
+      213: 6489811824542887925
+    second: punctir line_20
+  - first:
+      213: -7152797825725450827
+    second: punctir line_21
+  - first:
+      213: 3041490508469677502
+    second: punctir line_22
+  - first:
+      213: -3208834446380341153
+    second: punctir line_23
+  - first:
+      213: -2418674898700993000
+    second: punctir line_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: punctir line_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 1524
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb436e76a17fe02d0800000000000000
+      internalID: -3310436983286385474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 518
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09189d3adb1931500800000000000000
+      internalID: 365796238430929296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 516
+        width: 49
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5874664ee7adc1ba0800000000000000
+      internalID: -6116773955343333499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 517
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fb0d064a016acc0800000000000000
+      internalID: -3700251745653309549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 517
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb99ae497fefd97e0800000000000000
+      internalID: -1756967940295845444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_5
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 518
+        width: 45
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7059b27845889cf0800000000000000
+      internalID: -245299633482805124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_6
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 518
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2919bfeedaf956ac0800000000000000
+      internalID: -3862505536012709486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_7
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 518
+        width: 44
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a908bd46604f75570800000000000000
+      internalID: 8455495133710483610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_8
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 517
+        width: 47
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c7ba51f243e3e10800000000000000
+      internalID: 2179236646525566074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_9
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 518
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f503a6ea524647c0800000000000000
+      internalID: -4087506653608213004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_10
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 518
+        width: 48
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742ed54d5b4497b90800000000000000
+      internalID: -7243682977906040249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_11
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 518
+        width: 44
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b147a42bd3193a5b0800000000000000
+      internalID: -5358279437470501861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_12
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 518
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378885fc2182ca1f0800000000000000
+      internalID: -1032406153321478029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_13
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 518
+        width: 46
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8b9f320a0eb2e50800000000000000
+      internalID: 6785764241966741756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_14
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 517
+        width: 44
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ce486942c216eb0800000000000000
+      internalID: -4728449598106571726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_15
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 518
+        width: 49
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf03275203c778620800000000000000
+      internalID: 2776324241525715195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_16
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 517
+        width: 47
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35635b0605c82ef80800000000000000
+      internalID: -8078740504701487533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_17
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 517
+        width: 47
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12efb704b8be5dc0800000000000000
+      internalID: -3648275564759883237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_18
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 517
+        width: 49
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a48de8a69b8be40800000000000000
+      internalID: 5672487597987351135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_19
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 517
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5d6072b23200ef0800000000000000
+      internalID: -144076519830530619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_20
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 518
+        width: 45
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff220d4871701a50800000000000000
+      internalID: 6489811824542887925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_21
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 517
+        width: 46
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5b27f46482cbc90800000000000000
+      internalID: -7152797825725450827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_22
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 518
+        width: 45
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdae01c08b853a20800000000000000
+      internalID: 3041490508469677502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_23
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 517
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f586678721ee773d0800000000000000
+      internalID: -3208834446380341153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: punctir line_24
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 200
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ef5cb8ef32f6ed0800000000000000
+      internalID: -2418674898700993000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      punctir line_0: -3310436983286385474
+      punctir line_1: 365796238430929296
+      punctir line_10: -7243682977906040249
+      punctir line_11: -5358279437470501861
+      punctir line_12: -1032406153321478029
+      punctir line_13: 6785764241966741756
+      punctir line_14: -4728449598106571726
+      punctir line_15: 2776324241525715195
+      punctir line_16: -8078740504701487533
+      punctir line_17: -3648275564759883237
+      punctir line_18: 5672487597987351135
+      punctir line_19: -144076519830530619
+      punctir line_2: -6116773955343333499
+      punctir line_20: 6489811824542887925
+      punctir line_21: -7152797825725450827
+      punctir line_22: 3041490508469677502
+      punctir line_23: -3208834446380341153
+      punctir line_24: -2418674898700993000
+      punctir line_3: -3700251745653309549
+      punctir line_4: -1756967940295845444
+      punctir line_5: -245299633482805124
+      punctir line_6: -3862505536012709486
+      punctir line_7: 8455495133710483610
+      punctir line_8: 2179236646525566074
+      punctir line_9: -4087506653608213004
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

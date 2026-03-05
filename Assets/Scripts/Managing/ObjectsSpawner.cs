@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObjectsSpawner : MonoBehaviour
 {
-    [SerializeField] private Fruit[] _fruitsToSpawn;
+    [SerializeField] private MergeableObject[] _objectsToSpawn;
     [SerializeField] private Transform _positionToSpawnAt;
     [SerializeField] private DragAndDrop _dragNDrop;
     [SerializeField] private int _firstObjRandomChance;
@@ -21,27 +21,27 @@ public class ObjectsSpawner : MonoBehaviour
         return newObject;
     }
 
-    public Fruit SpawnFruit(Fruit fruitToSpawn) //для copypast object'a
+    public MergeableObject SpawnMergeableObject(MergeableObject objectToSpawn) //для copypast object'a
     {
-        Fruit fruit = Instantiate(fruitToSpawn, _positionToSpawnAt.position, Quaternion.identity);
+        MergeableObject obj = Instantiate(objectToSpawn, _positionToSpawnAt.position, Quaternion.identity);
 
-        return fruit;
+        return obj;
     }
 
-    public Fruit SpawnMergedFruit(Vector2 posToSpawnAt, FruitType fruitType)
+    public MergeableObject SpawnMergedMergeableObject(Vector2 posToSpawnAt, MergeableObjectLevel objectType)
     {
-        Fruit fruitToSpawn = null;
+        MergeableObject objectToSpawn = null;
 
-        foreach(var obj in _fruitsToSpawn)
+        foreach(var obj in _objectsToSpawn)
         {
-            if(obj.GetFruitType() == fruitType)
-                fruitToSpawn = obj;
+            if(obj.GetMergeableObjectLevel() == objectType)
+                objectToSpawn = obj;
         }
 
-        if(fruitToSpawn == null)
+        if(objectToSpawn == null)
             return null;
 
-        Fruit newObject = Instantiate(fruitToSpawn, posToSpawnAt, Quaternion.identity);
+        MergeableObject newObject = Instantiate(objectToSpawn, posToSpawnAt, Quaternion.identity);
         newObject.InitializeCollidableObject(); 
         MergedObjectSpawned?.Invoke(newObject);
         newObject.RotatingObject.StopRotation();
@@ -57,7 +57,7 @@ public class ObjectsSpawner : MonoBehaviour
     private DragableObject GetRandomObjectToSpawn()
     {
         int randomIndex = UnityEngine.Random.Range(0, 101);
-        int objectIndex = 0;
+        int objectIndex;
 
         if(randomIndex <= _firstObjRandomChance) //0-60
             objectIndex = 0;
@@ -71,6 +71,6 @@ public class ObjectsSpawner : MonoBehaviour
             objectIndex = 4; // 97 - 100
 
 
-        return _fruitsToSpawn[objectIndex];
+        return _objectsToSpawn[objectIndex];
     }
 }

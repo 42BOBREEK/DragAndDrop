@@ -13,7 +13,7 @@ public class ChestUnlocker : MonoBehaviour
     [SerializeField] private float _animationDuration;
 
     [SerializeField] private CopyPaster _copyPaster;
-    [SerializeField] private FruitsDeleter _deleter;
+    [SerializeField] private MergeableObjectDeleter _deleter;
 
     private void OnEnable()
     {

@@ -5,22 +5,22 @@ using DG.Tweening;
 
 public class DeleterAnimation : MonoBehaviour
 {
-    [SerializeField] private FruitsDeleter _deleter;
+    [SerializeField] private MergeableObjectDeleter _deleter;
     [SerializeField] private RectTransform _deleterTransform;
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _deleterCollider;
     [SerializeField] private float _animationDuration;
 
-    public event Action<Fruit> AnimationEnded;
+    public event Action<MergeableObject> AnimationEnded;
 
     private void OnEnable()
     {
-        _deleter.FruitDeleted += MoveFruitToDeleter;
+        _deleter.MergeableObjectDeleted += MoveObjectToDeleter;
     }
 
     private void OnDisable()
     {
-        _deleter.FruitDeleted -= MoveFruitToDeleter;
+        _deleter.MergeableObjectDeleted -= MoveObjectToDeleter;
     }
 
     private void Start()
@@ -41,17 +41,17 @@ public class DeleterAnimation : MonoBehaviour
         _deleterCollider.transform.position = worldPoint;
     }
 
-    private void MoveFruitToDeleter(Fruit fruitToMove)
+    private void MoveObjectToDeleter(MergeableObject objectToMove)
     {
-        Rigidbody2D rigidbody = fruitToMove.gameObject.GetComponent<Rigidbody2D>();
+        Rigidbody2D rigidbody = objectToMove.gameObject.GetComponent<Rigidbody2D>();
         rigidbody.simulated = false;
-        fruitToMove.transform.DOMove(_deleterCollider.transform.position, _animationDuration);
-        StartCoroutine(InvokeFruitCollidedWithDelay(fruitToMove, _animationDuration));
+        objectToMove.transform.DOMove(_deleterCollider.transform.position, _animationDuration);
+        StartCoroutine(InvokeObjectCollidedWithDelay(objectToMove, _animationDuration));
     }
 
-    private IEnumerator InvokeFruitCollidedWithDelay(Fruit fruit, float delay)
+    private IEnumerator InvokeObjectCollidedWithDelay(MergeableObject obj, float delay)
     {
         yield return new WaitForSeconds(delay);
-        AnimationEnded?.Invoke(fruit);
+        AnimationEnded?.Invoke(obj);
     }
 }

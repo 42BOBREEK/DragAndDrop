@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CopyPastObject : Fruit
+public class CopyPastObject : MergeableObject
 {
     public override void OnCollisionEnter2D(Collision2D coll)
     {
@@ -11,9 +11,9 @@ public class CopyPastObject : Fruit
         if(_canCollideWithDragableObjects == false)
             return;
 
-        if(coll.gameObject.TryGetComponent<Fruit>(out Fruit obj) == true)
+        if(coll.gameObject.TryGetComponent<MergeableObject>(out MergeableObject obj) == true)
         {
-            ChangeFruitType(obj.GetFruitType());
+            ChangeMergeableObjectLevel(obj.GetMergeableObjectLevel());
             InvokeCollidedWithDragableObject(obj);
         }
     }

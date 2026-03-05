@@ -1,10 +1,8 @@
 using UnityEngine;
-using TMPro;
-using System;
 
 public class CopyPaster : ActionButton
 {
-    [SerializeField] private Fruit _copyPastObject;
+    [SerializeField] private MergeableObject _copyPastObject;
     [SerializeField] private ObjectsSpawner _spawner;
     [SerializeField] private DragAndDrop _dragNDrop;
     [SerializeField] private GameManager _manager;
@@ -19,7 +17,7 @@ public class CopyPaster : ActionButton
         if(_dragNDrop.CanDrag == false || _chargesLeft <= 0)
             return;
 
-        Fruit copyPastObject = _spawner.SpawnFruit(_copyPastObject);
+        MergeableObject copyPastObject = _spawner.SpawnMergeableObject(_copyPastObject);
         copyPastObject.OnStartDrag();
 
         Rigidbody2D copyPastRigidbody = copyPastObject.GetComponent<Rigidbody2D>();

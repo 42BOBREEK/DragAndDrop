@@ -7,8 +7,8 @@ using System;
 [RequireComponent(typeof(RotatingObject))]
 public class DragableObject : MonoBehaviour
 {
-    [SerializeField] private GravityField _gravityField; //TODO: suck my dick
-    [SerializeField] private string _wallsTag;
+    [SerializeField] private GravityField _gravityField; 
+    [SerializeField] private string _wallsTag = "Walls";
 
     private Rigidbody2D _rigidbody;
     private Attractor _attractor;
@@ -23,7 +23,7 @@ public class DragableObject : MonoBehaviour
     public bool CanCollideWithDeadLine { get; private set; }
 
     public bool IsMergable => _isMergable;
-    public RotatingObject RotatingObject;
+    public RotatingObject RotatingObject { get; private set; }
 
     private void Awake()
     {
@@ -66,7 +66,7 @@ public class DragableObject : MonoBehaviour
             return;
         }
 
-        if(coll.gameObject.TryGetComponent<Fruit>(out Fruit obj) == true)
+        if(coll.gameObject.TryGetComponent<MergeableObject>(out MergeableObject obj) == true)
         {
             CanCollideWithDeadLine = true;
 

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private bool _isPaused;
     [SerializeField] private AudioSource _audio;
     [SerializeField] private CopyPaster _copyPaster;
-    [SerializeField] private FruitsDeleter _deleter;
+    [SerializeField] private MergeableObjectDeleter _deleter;
     [SerializeField] private MusicManager _musicManager;
     [SerializeField] private ProgressSaver _progressSaver;
 
@@ -53,10 +53,10 @@ public class GameManager : MonoBehaviour
         if (_merger != null)
         {
             _merger.BountyMerged += ChangeScore;
-            _merger.WatermelonMerged += OnWatermelonMerged;
+            _merger.LastLevelMerged += OnLastLevelMerged;
         }
         if (_deadLine != null)
-            _deadLine.CollidedWithFruit += SetGameOver;
+            _deadLine.CollidedWithMergeableObject += SetGameOver;
         if (_copyPaster != null)
             _copyPaster.ChargesChanged += SaveCopyPasterCharges;
         if (_deleter != null)
@@ -75,10 +75,10 @@ public class GameManager : MonoBehaviour
         if (_merger != null)
         {
             _merger.BountyMerged -= ChangeScore;
-            _merger.WatermelonMerged -= OnWatermelonMerged;
+            _merger.LastLevelMerged -= OnLastLevelMerged;
         }
         if (_deadLine != null)
-            _deadLine.CollidedWithFruit -= SetGameOver;
+            _deadLine.CollidedWithMergeableObject -= SetGameOver;
         if (_copyPaster != null)
             _copyPaster.ChargesChanged -= SaveCopyPasterCharges;
         if (_deleter != null)
@@ -133,11 +133,11 @@ public class GameManager : MonoBehaviour
     
     private void MergeObjects(DragableObject obj1, DragableObject obj2)
     {
-        obj1.TryGetComponent<Fruit>(out Fruit fruit1);
-        obj2.TryGetComponent<Fruit>(out Fruit fruit2);
+        obj1.TryGetComponent<MergeableObject>(out MergeableObject object1);
+        obj2.TryGetComponent<MergeableObject>(out MergeableObject object2);
 
-        if (fruit1 != null && fruit2 != null && _merger != null)
-            _merger.MergeObjects(fruit1, fruit2);
+        if (object1 != null && object2 != null && _merger != null)
+            _merger.MergeObjects(object1, object2);
     }
 
     private void SetGameOver()
@@ -150,14 +150,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    private void OnWatermelonMerged(Vector2 watermelonPos)
+    private void OnLastLevelMerged(Vector2 lastLevelPos)
     {
         if (_spawner != null)
-            _spawner.SpawnChest(watermelonPos);
+            _spawner.SpawnChest(lastLevelPos);
         if (_scoreCounter != null)
-            _scoreCounter.AddWatermelonScore();
+            _scoreCounter.AddUltimateScore();
         if (_progressSaver != null && _scoreCounter != null)
-            _progressSaver.SaveWatermelonScore(_scoreCounter.WatermelonScore);
+            _progressSaver.SaveUltimateScore(_scoreCounter.UltimateScore);
     }
 
     private void PlaySound(DragableObject obj)
